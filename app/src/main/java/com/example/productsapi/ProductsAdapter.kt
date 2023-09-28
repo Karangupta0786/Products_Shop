@@ -1,6 +1,7 @@
 package com.example.productsapi
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,5 +33,11 @@ class ProductsAdapter(val productList: List<Product>,val applicationContext:Cont
         holder.productPrice.text = "${currentProduct.price}Rs"
         // how to show the ImageView if the image is in form of URL.
         Picasso.get().load(currentProduct.thumbnail).into(holder.productImage)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(applicationContext,ProductActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            applicationContext.startActivity(intent)
+        }
     }
 }

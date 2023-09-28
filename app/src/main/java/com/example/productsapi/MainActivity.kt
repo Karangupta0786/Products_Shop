@@ -17,6 +17,8 @@ import retrofit2.Response
 //URL = https://dummyjson.com/products
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,13 +53,6 @@ class MainActivity : AppCompatActivity() {
                     val productsAdapter = ProductsAdapter(productList,applicationContext)
                     recyclerView.adapter = productsAdapter
                     productsAdapter.notifyDataSetChanged()
-
-
-
-
-
-
-
 
 
                 }
