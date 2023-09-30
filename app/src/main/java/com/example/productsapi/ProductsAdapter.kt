@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 
 class ProductsAdapter(val productList: List<Product>,val applicationContext:Context):RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
@@ -36,6 +37,7 @@ class ProductsAdapter(val productList: List<Product>,val applicationContext:Cont
 
         holder.itemView.setOnClickListener {
             val intent = Intent(applicationContext,ProductActivity::class.java)
+            intent.putExtra("product",Gson().toJson(productList[position]))
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             applicationContext.startActivity(intent)
         }
