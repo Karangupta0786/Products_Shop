@@ -1,5 +1,6 @@
 package com.example.productsapi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,10 +24,10 @@ class ProductActivity : AppCompatActivity() {
 //        Toast.makeText(applicationContext, intent.getStringExtra("product"), Toast.LENGTH_SHORT).show()
 
         val data = Gson()?.fromJson(intent.getStringExtra("product")!!,Product::class.java)
-        Toast.makeText(applicationContext, data?.description, Toast.LENGTH_SHORT).show()
-        Toast.makeText(applicationContext, data?.price.toString(), Toast.LENGTH_SHORT).show()
-        Toast.makeText(applicationContext, data?.title, Toast.LENGTH_SHORT).show()
-        Toast.makeText(applicationContext, data?.thumbnail, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(applicationContext, data?.description, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(applicationContext, data?.price.toString(), Toast.LENGTH_SHORT).show()
+//        Toast.makeText(applicationContext, data?.title, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(applicationContext, data?.thumbnail, Toast.LENGTH_SHORT).show()
         
         product_detail_Title = findViewById(R.id.product_detail_Title)
         product_detail_details = findViewById(R.id.product_detail_details)
@@ -40,7 +41,8 @@ class ProductActivity : AppCompatActivity() {
         product_detail_price.text = "${data?.price}RS"
         val url = data?.thumbnail
         btn_order.setOnClickListener {
-            Toast.makeText(applicationContext, "Order placed", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(applicationContext, "Order placed", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, CongratsActivity::class.java))
         }
         iv_back.setOnClickListener {
             onBackPressed()

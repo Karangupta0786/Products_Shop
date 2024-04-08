@@ -4,32 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
-    tools:context=".SplashScreen">
+    android:background="@color/black"
+    tools:context=".CongratsActivity">
+
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/congrats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:textColor="@color/black"
-        android:text="E-Commerce App"
-        android:textSize="29dp"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:text="🎉Congratulations!!🎉"/>
+
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/order_placed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/text"
-        app:layout_constraintEnd_toEndOf="@id/text"
-        android:text="by Karan Gupta"
-        android:layout_marginTop="5dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"/>
+        app:layout_constraintTop_toBottomOf="@id/congrats"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="🎉Order Placed Successfully!!🎉"
+        android:textColor="@color/white"
+        android:textSize="21sp"/>
+
+
+
+
 
 
 
